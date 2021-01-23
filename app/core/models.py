@@ -12,9 +12,9 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, password):
+    def create_superuser(self, email_address, password):
         """Creates and saves a new superuser"""
-        user = self.create_user(email, password)
+        user = self.create_user(email_address, password)
         user.is_staff = True
         user.is_superuser = True
         user.save(using=self._db)
